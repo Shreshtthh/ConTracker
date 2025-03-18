@@ -3,6 +3,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import citizenRouter from './routes/citizen.routes.js';
+import adminRoutes from './routes/admin.routes.js'
+import ownerRoutes from './routes/owner.routes.js'
 import cookieParser from 'cookie-parser';
 // import tenderRoutes from './routes/tenderRoutes.js';
 
@@ -24,5 +26,7 @@ app.use(express.static("public")) //to store the components in the server
 // app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
 
 app.use('/api/citizens',citizenRouter)
+app.use('/api/admins',adminRoutes)
+app.use('/api/owners',ownerRoutes)
 
 export {app};
